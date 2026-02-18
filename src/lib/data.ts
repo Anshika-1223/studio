@@ -40,10 +40,10 @@ export const ABOUT_DATA = [
 ];
 
 export const ORGANIZERS = [
-  { name: 'IIMT', logo: 'https://ibb.co/mrc3Qh7S' },
-  { name: 'IIIT Delhi', logo: PlaceHolderImages.find(img => img.id === 'organizer-iiitd')?.imageUrl || '' },
-  { name: 'IIMT LBF', logo: PlaceHolderImages.find(img => img.id === 'organizer-iimt')?.imageUrl || '' },
-  { name: 'Botlab Dynamics', logo: PlaceHolderImages.find(img => img.id === 'organizer-botlab')?.imageUrl || '' },
+  { name: 'IIMT', logo: '/iimt.png' },
+  { name: 'IIIT Delhi', logo: '/iiitdelhi.png' },
+  { name: 'IIMT LBF', logo: '/iimt-blf.png' },
+  { name: 'Botlab Dynamics', logo: '/botlab.jpeg' },
 ];
 
 export const DOMAINS = [
@@ -59,12 +59,13 @@ export const DOMAINS = [
 ];
 
 export const TIMELINE = [
-  { date: 'Feb 15', event: 'Registration Starts', description: 'Early bird registrations open for teams.' },
-  { date: 'Feb 28', event: 'Proposal Submission', description: 'Abstract submission deadline for project ideas.' },
-  { date: 'March 5', event: 'Shortlisting', description: 'Announcement of teams selected for the final round.' },
-  { date: 'March 14', event: 'Check-in & Kickoff', description: 'Arrival at venue and start of the 24-hour sprint.' },
-  { date: 'March 15', event: 'Judging', description: 'Project demonstrations and evaluation by the jury.' },
-  { date: 'March 15', event: 'Award Ceremony', description: 'Winner announcements and prize distribution.' },
+  { date: 'Feb 20', event: 'Registration Starts', description: 'Early bird registrations open for teams.' },
+  { date: 'March 18', event: 'Proposal Submission', description: 'Abstract submission deadline for project ideas.' },
+  { date: 'March 25', event: 'Shortlisting', description: 'Announcement of teams selected for the final round.' },
+  { date: 'March 28', event: 'Check-in & Kickoff', description: 'Arrival at venue and start of the 24-hour sprint.' },
+  { date: 'April 3', event: 'Offline Round', description: 'Arrival at venue and start of the 24-hour sprint.' },
+  { date: 'April 4', event: 'Judging', description: 'Project demonstrations and evaluation by the jury.' },
+  { date: 'April 4', event: 'Award Ceremony', description: 'Winner announcements and prize distribution.' },
 ];
 
 export const PRIZES = [

@@ -24,13 +24,12 @@ export function Organizers() {
               key={org.name}
               className="bg-card border-border backdrop-blur-md glow-hover p-8 flex flex-col items-center justify-center transition-all group"
             >
-              <div className="relative w-32 h-32 mb-6 grayscale group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-110">
+              <div className="relative w-32 h-32 mb-6  group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-110">
                 <Image
                   src={org.logo}
                   alt={org.name}
                   fill
                   className="object-contain"
-                  data-ai-hint="logo"
                 />
               </div>
               <h3 className="text-xl font-bold tracking-widest uppercase text-white/80 group-hover:text-white group-hover:text-primary transition-colors">
