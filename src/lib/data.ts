@@ -40,7 +40,7 @@ export const ABOUT_DATA = [
 ];
 
 export const ORGANIZERS = [
-  { name: 'IIMT', logo: PlaceHolderImages.find(img => img.id === 'organizer-iimt')?.imageUrl || '' },
+  { name: 'IIMT', logo: 'https://ibb.co/mrc3Qh7S' },
   { name: 'IIIT Delhi', logo: PlaceHolderImages.find(img => img.id === 'organizer-iiitd')?.imageUrl || '' },
   { name: 'IIMT LBF', logo: PlaceHolderImages.find(img => img.id === 'organizer-iimt')?.imageUrl || '' },
   { name: 'Botlab Dynamics', logo: PlaceHolderImages.find(img => img.id === 'organizer-botlab')?.imageUrl || '' },
