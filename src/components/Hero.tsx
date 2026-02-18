@@ -26,8 +26,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter text-shimmer leading-tight uppercase font-headline">
+      <div className="relative z-10 text-center px-6 max-w-7xl">
+        <h1 className="text-2xl md:text-7xl lg:text-8xl  font-black mb-6 tracking-tighter text-shimmer leading-tight uppercase font-headline">
           {HERO_DATA.title}
         </h1>
         <p className="text-xl md:text-2xl text-white/80 mb-10 font-medium tracking-widest uppercase">

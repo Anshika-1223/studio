@@ -15,9 +15,9 @@ export const NAV_LINKS = [
 export const HERO_DATA = {
   title: 'MIND INSTALLERS HACKATHON 4.0',
   tagline: 'Unleash Your Innovation. Build the Future.',
-  date: 'March 14-15, 2025',
+  date: 'April 3-4, 2026',
   venue: 'IIMT Group of Institutions, Greater Noida',
-  time: '10:00 AM Onwards',
+  time: '36 Hr',
 };
 
 export const ABOUT_DATA = [

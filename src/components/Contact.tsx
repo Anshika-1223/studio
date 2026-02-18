@@ -50,7 +50,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary border border-primary/20 transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                <div className="w-32 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary border border-primary/20 transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
