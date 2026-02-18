@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-video-poster",
+      "description": "Cyberpunk background tech",
+      "imageUrl": "https://images.unsplash.com/photo-1689443111070-2c1a1110fe82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjeWJlcnB1bmslMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3MTQwNjc3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cyberpunk technology"
+    },
+    {
+      "id": "organizer-iimt",
+      "description": "IIMT Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1709227040897-14f6c6687086?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dW5pdmVyc2l0eSUyMGxvZ298ZW58MHx8fHwxNzcxMzM0ODc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university logo"
+    },
+    {
+      "id": "organizer-iiitd",
+      "description": "IIIT Delhi Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1764312385768-93b8f47250de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbnN0aXR1dGUlMjBsb2dvfGVufDB8fHx8MTc3MTQwNjc3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "institute logo"
+    },
+    {
+      "id": "organizer-botlab",
+      "description": "Botlab Dynamics Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1589254065909-b7086229d08c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cm9ib3RpY3MlMjBjb21wYW55fGVufDB8fHx8MTc3MTQwNjc3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robotics company"
+    },
+    {
+      "id": "team-member-1",
+      "description": "Team Member Photo",
+      "imageUrl": "https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEzNDIzMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Team Member Photo",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEzNDIzMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Team Member Photo",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEzNDIzMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "partner-digitalocean",
+      "description": "DigitalOcean Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1544703097-5b4778d48c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbG91ZCUyMGxvZ298ZW58MHx8fHwxNzcxMzc1NjgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud logo"
+    },
+    {
+      "id": "partner-vercel",
+      "description": "Vercel Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1662027067763-770376e710f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NzEzMjAwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech logo"
+    }
+  ]
 }
