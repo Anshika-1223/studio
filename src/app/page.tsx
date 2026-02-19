@@ -14,10 +14,14 @@ import { Footer } from '@/components/Footer';
 import { TEAM_MEMBERS } from '@/lib/data';
 import TechPartner from '@/components/TechPartner';
 import ChiefPatron from '@/components/ChiefPatron';
+import { EmberParticles } from '@/components/EmberParticles';
 
 export default function Home() {
   return (
     <main className="relative bg-black min-h-screen">
+       <div className="fixed inset-0 z-0 w-full">
+          <EmberParticles containerId="ember-container" />
+        </div>
       <Navbar />
       <Hero />
       <About />
