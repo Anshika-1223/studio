@@ -13,20 +13,20 @@ const leadership = [
     {
         category: 'Patrons',
         members: [
-            { name: 'Dr. Mayank Aggarwal', role: 'Managing Director' },
-            { name: 'Dr. Mayank Aggarwal', role: 'Managing Director' },
+            { name: 'Prof.(Dr) Ankur Jauhari', role: 'Director General (Academics)' },
+            { name: 'Prof.(Dr) Chetan Khemraj', role: 'Dy. Director (College Of Engineering)' },
         ],
     },
     {
         category: 'Convenor',
         members: [
-            { name: 'Prof. (Dr) Seema Nayak', role: 'Dean IQAC, IIMT College of Engineering' },
+            { name: 'Prof(Dr) Seema Nayak', role: 'Dean IQAC, IIMT College of Engineering' },
         ],
     },
     {
         category: 'Co-ordinator',
         members: [
-            { name: 'Prof. (Dr) Seema Nayak', role: 'Dean IQAC' },
+            { name: 'Dr. Amit Shukla', role: 'HOD CSE AI' },
             { name: 'Prof. (Dr) Seema Nayak', role: 'IIMT College of Engineering' },
         ],
     },
@@ -43,8 +43,8 @@ const supportingOrgs = [
 const PatronCard = ({ name, role }: { name: string, role: string }) => (
     <div className="w-full bg-card/50 border border-primary/30 glow-hover p-6 text-center transition-all duration-300 transform skew-x-[-12deg] hover:bg-primary/20">
         <div className="transform skew-x-[12deg]">
-            <h3 className="text-2xl font-bold tracking-wider uppercase font-headline text-primary">{name}</h3>
-            <p className="text-white/70 tracking-widest uppercase text-sm">{role}</p>
+            <h3 className="text-3xl font-bold tracking-wider uppercase font-headline text-primary">{name}</h3>
+            <p className="text-white/70 tracking-widest uppercase text-lg">{role}</p>
         </div>
     </div>
 );
@@ -54,11 +54,11 @@ const ChiefPatron = () => {
         <section id="leadership" className="py-24 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {leadership.map((group) => (
-                    <div key={group.category} className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter uppercase font-headline section-underline">
+                    <div key={group.category} className="text-center mb-16 ">
+                        <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter uppercase font-headline section-underline">
                             {group.category}
                         </h2>
-                        <div className={`grid grid-cols-1 ${group.members.length > 1 ? 'md:grid-cols-2' : 'max-w-lg mx-auto'} gap-8`}>
+                        <div className={`grid grid-cols-1 bg-zinc-950 ${group.members.length > 1 ? 'md:grid-cols-2' : 'max-w-lg mx-auto'} gap-5`}>
                             {group.members.map((patron, index) => (
                                 <PatronCard key={index} name={patron.name} role={patron.role} />
                             ))}
@@ -66,11 +66,11 @@ const ChiefPatron = () => {
                     </div>
                 ))}
 
-                <div className="text-center mt-24">
-                    <h2 className="text-4xl md:text-5xl font-black mb-12 tracking-tighter uppercase font-headline section-underline">
+                <div className="text-center mt-24 ">
+                    <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tighter uppercase font-headline section-underline">
                         Supported By
                     </h2>
-                    <div className="bg-card/50 border border-primary/30 p-8">
+                    <div className="bg-zinc-950 border border-primary/30 p-8">
                         <div className="flex justify-center items-center flex-wrap gap-x-16 gap-y-8">
                             {supportingOrgs.map((org, index) => (
                                 <Image

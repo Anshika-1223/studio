@@ -16,11 +16,11 @@ export function Domains() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 ">
         {DOMAINS.map((domain) => (
           <Card 
             key={domain.name}
-            className="bg-card border-border glow-hover p-10 flex flex-col items-center text-center group cursor-default"
+            className="relative bg-card border-border glow-hover p-10 flex flex-col items-center text-center group cursor-default"
           >
             <span className="text-6xl mb-6 group-hover:scale-125 transition-transform duration-300 transform block">
               {domain.icon}

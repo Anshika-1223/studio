@@ -64,7 +64,7 @@ export const EmberParticles = () => {
 
     symbols.forEach(symbol => {
         const positions = new Float32Array(particlesPerSymbol * 3);
-        const velocities = new Float32Array(particlesPerSymbol * 3);
+        const velocities = new Float32Array(particlesPerSymbol * 5);
 
         for (let i = 0; i < particlesPerSymbol; i++) {
             positions[i * 3] = (Math.random() - 0.5) * 20;

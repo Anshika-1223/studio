@@ -81,7 +81,7 @@ export const PARTNERS = [
 ];
 
 export const TEAM_MEMBERS = [
-  { name: 'Harshit', role: 'Chief Organizer', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },
+  { name: 'Ujjwal Katiyar', role: 'Chief Organizer', image: '/ujjwal.jpeg' },
   { name: 'Ananya Gupta', role: 'Event Coordinator', image: PlaceHolderImages.find(img => img.id === 'team-member-2')?.imageUrl || '' },
   { name: 'Vikram Singh', role: 'Technical Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-3')?.imageUrl || '' },
   { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '/' },
