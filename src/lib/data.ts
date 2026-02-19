@@ -43,8 +43,9 @@ export const ORGANIZERS = [
   { name: 'IIMT', logo: '/iimt.png' },
   { name: 'IIIT Delhi', logo: '/iiitdelhi.png' },
   { name: 'IIMT LBF', logo: '/iimt-blf.png' },
-  { name: 'Botlab Dynamics', logo: '/botlab.jpeg' },
 ];
+export const ORGANIZERS2 = { name: 'Botlab Dynamics', logo: '/botlab.jpeg' }
+
 
 export const DOMAINS = [
   { name: 'AI/ML', icon: '🤖' },
@@ -82,9 +83,12 @@ export const PARTNERS = [
 ];
 
 export const TEAM_MEMBERS = [
-  { name: 'Dr. Rahul Sharma', role: 'Chief Organizer', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },
+  { name: 'Harshit', role: 'Chief Organizer', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },
   { name: 'Ananya Gupta', role: 'Event Coordinator', image: PlaceHolderImages.find(img => img.id === 'team-member-2')?.imageUrl || '' },
   { name: 'Vikram Singh', role: 'Technical Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-3')?.imageUrl || '' },
+  { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '/' },
+  { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },
+  { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },
   { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },
 ];
 

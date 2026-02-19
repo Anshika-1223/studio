@@ -12,6 +12,8 @@ import { FAQ } from '@/components/FAQ';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { TEAM_MEMBERS } from '@/lib/data';
+import TechPartner from '@/components/TechPartner';
+import ChiefPatron from '@/components/ChiefPatron';
 
 export default function Home() {
   return (
@@ -20,9 +22,11 @@ export default function Home() {
       <Hero />
       <About />
       <Organizers />
+      <TechPartner/>
       <Domains />
       <Timeline />
       <Prizes />
+      <ChiefPatron/>
       <div id="team">
         <TeamCarousel title="Organizing Team" members={TEAM_MEMBERS} />
       </div>

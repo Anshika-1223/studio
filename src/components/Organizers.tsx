@@ -18,13 +18,13 @@ export function Organizers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex gap-8 text-center justify-center">
           {ORGANIZERS.map((org) => (
             <Card 
               key={org.name}
-              className="bg-card border-border backdrop-blur-md glow-hover p-8 flex flex-col items-center justify-center transition-all group"
+              className="bg-card border-border backdrop-blur-md glow-hover p-8 flex flex-col items-center justify-center transition-all "
             >
-              <div className="relative w-32 h-32 mb-6  group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-110">
+              <div className="relative w-48 h-32 mb-6  group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-110">
                 <Image
                   src={org.logo}
                   alt={org.name}
