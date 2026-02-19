@@ -1,41 +1,40 @@
-
-"use client";
+'use client';
 
 import Image from 'next/image';
-import { ORGANIZERS } from '@/lib/data';
-import { Card } from './ui/card';
+import { ORGANIZERS_DATA } from '@/lib/data';
+
+const OrganizerCard = ({ name, logo, type }: { name: string; logo: string; type: string }) => (
+  <div className="group relative bg-zinc-900 border border-red-500 p-5 text-center transition-all duration-300 hover:scale-105 hover:bg-primary/20 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)] w-72 [clip-path:polygon(15%_0,_85%_0,_100%_100%,_0_100%)] flex flex-col justify-center items-center">
+    <div className="relative h-32">
+      <Image
+        src={logo}
+        alt={`${name} logo`}
+        width={130}
+        height={130}
+        className="object-contain transition-transform duration-300 group-hover:scale-110"
+      />
+    </div>
+    <h3 className="text-xl font-bold tracking-widest uppercase font-headline text-white">{name}</h3>
+    <p className="text-primary tracking-widest uppercase text-sm font-medium">{type}</p>
+  </div>
+);
 
 export function Organizers() {
   return (
-    <section id="organizers" className="py-24 bg-black/50 overflow-hidden px-6">
+    <section id="organizers" className="py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter uppercase font-headline section-underline">
-            Organizers
+            Organizers & Partners
           </h2>
           <p className="text-lg text-white/60 uppercase tracking-widest font-medium">
             Powered by industry and academic excellence.
           </p>
         </div>
 
-        <div className="flex gap-8 text-center justify-center">
-          {ORGANIZERS.map((org) => (
-            <Card 
-              key={org.name}
-              className="bg-card border-border backdrop-blur-md glow-hover p-8 flex flex-col items-center justify-center transition-all "
-            >
-              <div className="relative w-48 h-32 mb-6  group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-110">
-                <Image
-                  src={org.logo}
-                  alt={org.name}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-xl font-bold tracking-widest uppercase text-white/80 group-hover:text-white group-hover:text-primary transition-colors">
-                {org.name}
-              </h3>
-            </Card>
+        <div className="flex flex-wrap items-center justify-center gap-12">
+          {ORGANIZERS_DATA.map((org) => (
+            <OrganizerCard key={org.name} {...org} />
           ))}
         </div>
       </div>

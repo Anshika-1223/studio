@@ -1,27 +1,29 @@
-"use client";
+'use client';
 
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-const createCardTexture = () => {
+// Function to create textures for the particles
+const createSymbolTexture = (symbol: string) => {
   const canvas = document.createElement("canvas");
   canvas.width = 256;
   canvas.height = 256;
-
   const ctx = canvas.getContext("2d");
+
+  if (!ctx) {
+    return new THREE.Texture();
+  }
+  
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const symbols = ["♠", "♦", "♣"];
-  const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-
-  ctx.font = "bold 180px serif";
+  ctx.font = 'bold 160px "Roboto Mono", monospace';
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
 
-  // Neon red glow
-  ctx.shadowColor = "rgba(255, 0, 80, 1)";
+  // Neon red glow, matching the site's primary color
+  ctx.shadowColor = "rgba(220, 38, 38, 0.7)";
   ctx.shadowBlur = 20;
-  ctx.fillStyle = "#f5190a";
+  ctx.fillStyle = "#dc2626"; // Tailwind's red-600
   ctx.fillText(symbol, canvas.width / 2, canvas.height / 2);
 
   const texture = new THREE.CanvasTexture(canvas);
@@ -29,127 +31,124 @@ const createCardTexture = () => {
   return texture;
 };
 
-export const EmberParticles = ({ containerId }) => {
-  const containerRef = useRef(null);
-  const sceneRef = useRef(null);
-  const cameraRef = useRef(null);
-  const rendererRef = useRef(null);
-  const particlesRef = useRef(null);
-  const geometryRef = useRef(null);
-  const materialRef = useRef(null);
-  const lastScrollYRef = useRef(0);
-  const animationFrameRef = useRef(undefined);
+// Main component for the animated background
+export const EmberParticles = () => {
+  const mountRef = useRef<HTMLDivElement>(null);
+  const animationFrameRef = useRef<number>();
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!mountRef.current) return;
 
+    const currentMount = mountRef.current;
+
+    // Scene setup
     const scene = new THREE.Scene();
-    sceneRef.current = scene;
-
     const camera = new THREE.PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      currentMount.clientWidth / currentMount.clientHeight,
       0.1,
       1000
     );
-    camera.position.z = 5;
-    cameraRef.current = camera;
+    camera.position.z = 10;
 
+    // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    containerRef.current.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
+    currentMount.appendChild(renderer.domElement);
+    
+    const symbols = ["♠", "♦", "♣", "0", "1"];
+    const totalParticleCount = 500;
+    const particlesPerSymbol = Math.floor(totalParticleCount / symbols.length);
+    const particleSystems: { points: THREE.Points; geometry: THREE.BufferGeometry; velocities: Float32Array }[] = [];
 
-    /* 🔽 SMALL DENSITY HERE */
-    const particleCount = 180;
+    symbols.forEach(symbol => {
+        const positions = new Float32Array(particlesPerSymbol * 3);
+        const velocities = new Float32Array(particlesPerSymbol * 3);
 
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-    const velocities = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particlesPerSymbol; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 20;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
 
-    for (let i = 0; i < particleCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 8;   // tighter spread
-      positions[i * 3 + 1] = -5 - Math.random() * 3;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 2;
+            velocities[i * 3] = (Math.random() - 0.5) * 0.0005;
+            velocities[i * 3 + 1] = 0.001 + Math.random() * 0.002;
+            velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.0005;
+        }
 
-      velocities[i * 3] = (Math.random() - 0.5) * 0.002;
-      velocities[i * 3 + 1] = 0.004 + Math.random() * 0.004;
-      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.001;
-    }
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
-    geometry.setAttribute(
-      "position",
-      new THREE.BufferAttribute(positions, 3)
-    );
-    geometryRef.current = geometry;
+        const material = new THREE.PointsMaterial({
+            size: 0.35,
+            transparent: true,
+            opacity: 0.7,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            map: createSymbolTexture(symbol),
+        });
 
-    const material = new THREE.PointsMaterial({
-      size: 0.45,
-      transparent: true,
-      opacity: 0.9,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      map: createCardTexture(),
-      alphaTest: 0.2,
+        const points = new THREE.Points(geometry, material);
+        scene.add(points);
+        particleSystems.push({ points, geometry, velocities });
     });
-    materialRef.current = material;
 
-    const particles = new THREE.Points(geometry, material);
-    scene.add(particles);
-    particlesRef.current = particles;
 
+    // Resize handler
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      if (currentMount) {
+        camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+      }
     };
-
-    const handleScroll = () => {
-      lastScrollYRef.current = window.scrollY;
-    };
-
     window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
 
+    // Animation loop
     const animate = () => {
       animationFrameRef.current = requestAnimationFrame(animate);
 
-      const scrollDelta = window.scrollY - lastScrollYRef.current;
-      const pos = geometry.attributes.position.array;
+      particleSystems.forEach(system => {
+        const pos = system.geometry.attributes.position.array as Float32Array;
 
-      for (let i = 0; i < pos.length; i += 3) {
-        pos[i] += velocities[i];
-        pos[i + 1] += velocities[i + 1] + scrollDelta * 0.00015;
-        pos[i + 2] += velocities[i + 2];
+        for (let i = 0; i < pos.length; i += 3) {
+            pos[i] += system.velocities[i];
+            pos[i + 1] += system.velocities[i + 1];
+            pos[i + 2] += system.velocities[i + 2];
 
-        if (pos[i + 1] > 5) {
-          pos[i] = (Math.random() - 0.5) * 8;
-          pos[i + 1] = -5 - Math.random() * 3;
-          pos[i + 2] = (Math.random() - 0.5) * 2;
+            if (pos[i + 1] > 10) {
+                pos[i] = (Math.random() - 0.5) * 20;
+                pos[i + 1] = -10;
+                pos[i + 2] = (Math.random() - 0.5) * 20;
+            }
         }
-      }
 
-      geometry.attributes.position.needsUpdate = true;
+        system.geometry.attributes.position.needsUpdate = true;
+        system.points.rotation.y += 0.0001;
+      });
+      
       renderer.render(scene, camera);
     };
 
     animate();
 
+    // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-      cancelAnimationFrame(animationFrameRef.current);
-
-      geometry.dispose();
-      material.dispose();
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      particleSystems.forEach(system => {
+          system.geometry.dispose();
+          (system.points.material as THREE.PointsMaterial).map?.dispose();
+          (system.points.material as THREE.PointsMaterial).dispose();
+      });
       renderer.dispose();
-
-      if (containerRef.current) {
-        containerRef.current.removeChild(renderer.domElement);
+      if (currentMount) {
+        currentMount.innerHTML = ''; // Clear the container
       }
     };
   }, []);
 
-  return <div id={containerId} ref={containerRef} />;
+  return <div ref={mountRef} className="fixed top-0 left-0 w-full h-full -z-10" />;
 };
