@@ -39,13 +39,12 @@ export const ABOUT_DATA = [
   }
 ];
 
-export const ORGANIZERS = [
-  { name: 'IIMT', logo: '/iimt.png' },
-  { name: 'IIIT Delhi', logo: '/iiitdelhi.png' },
-  { name: 'IIMT LBF', logo: '/iimt-blf.png' },
+export const ORGANIZERS_DATA = [
+  { name: 'IIMT', logo: '/iimt.png', type: 'organizer' },
+  { name: 'IIIT Delhi', logo: '/logo.jpg', type: 'organizer' },
+  { name: 'IIMT LBF', logo: '/iimt-blf.png', type: 'organizer' },
 ];
-export const ORGANIZERS2 = { name: 'Botlab Dynamics', logo: '/botlab.jpeg' }
-
+export const ORGANIZERS2 = { name: 'Botlab Dynamics', logo: '/botlab.jpeg', type: 'tech-partner' };
 
 export const DOMAINS = [
   { name: 'AI/ML', icon: '🤖' },

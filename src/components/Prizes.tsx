@@ -1,5 +1,4 @@
-
-"use client";
+'use client';
 
 import { PRIZES } from '@/lib/data';
 import { Card } from './ui/card';
@@ -7,15 +6,6 @@ import { Trophy, Star, Award } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Prizes() {
-  const getIcon = (idx: number) => {
-    switch (idx) {
-      case 0: return <Trophy className="w-16 h-16 text-yellow-500" />;
-      case 1: return <Star className="w-16 h-16 text-gray-400" />;
-      case 2: return <Award className="w-16 h-16 text-amber-700" />;
-      default: return null;
-    }
-  };
-
   return (
     <section id="prizes" className="py-16 mx-auto overflow-hidden flex flex-col justify-center items-center">
       <div className="text-center mb-16">
@@ -28,9 +18,12 @@ export function Prizes() {
       </div>
 
       <div className="flex justify-center">
-
-        <div className="bg-card border glow-hover items-center p-16 rounded-xl transition-all duration-500 overflow-hidden">
-          <h1 className="text-4xl font-bold flex flex-col justify-center items-center gap-4">PRICE POOL UPTO <span className='text-8xl'>10,0000 Rs</span></h1>
+        <div className="w-full bg-red-600 border border-primary glow-hover p-16 text-center transition-all duration-300 transform skew-x-[-12deg] hover:scale-105 hover:bg-primary">
+          <div className="transform skew-x-[12deg] text-white">
+            <h1 className="text-4xl font-bold flex flex-col justify-center items-center gap-4">
+              PRICE POOL UPTO <span className="text-8xl">10,0000 Rs</span>
+            </h1>
+          </div>
         </div>
       </div>
     </section>
