@@ -16,7 +16,7 @@ export const HERO_DATA = {
   title: 'MIND INSTALLERS HACKATHON 4.0',
   tagline: 'Unleash Your Innovation. Build the Future.',
   date: 'April 3-4, 2026',
-  venue: 'IIMT Group of Institutions, Greater Noida',
+  venue: 'IIMT College Of Engineering, Greater Noida',
   time: '36 Hr',
 };
 
