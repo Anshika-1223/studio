@@ -15,6 +15,9 @@ import { TEAM_MEMBERS } from '@/lib/data';
 import TechPartner from '@/components/TechPartner';
 import ChiefPatron from '@/components/ChiefPatron';
 import { EmberParticles } from '@/components/EmberParticles';
+import { QrCode } from '@/components/QrCode';
+import CommunityPartner from '@/components/CommunityPartner';
+
 
 export default function Home() {
   return (
@@ -30,11 +33,13 @@ export default function Home() {
       <Domains />
       <Timeline />
       <Prizes />
+      <CommunityPartner/>
       <ChiefPatron/>
       <div id="team">
         <TeamCarousel title="Organizing Team" members={TEAM_MEMBERS} />
       </div>
       <Partners />
+      <QrCode/>
       <FAQ />
       <Contact />
       <Footer />

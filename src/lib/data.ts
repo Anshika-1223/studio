@@ -17,7 +17,7 @@ export const HERO_DATA = {
   tagline: 'Unleash Your Innovation. Build the Future.',
   date: 'April 3-4, 2026',
   venue: 'IIMT College Of Engineering, Greater Noida',
-  time: '36 Hr',
+  time: '30 Hr',
 };
 
 export const ABOUT_DATA = [
@@ -81,9 +81,12 @@ export const PARTNERS = [
 ];
 
 export const TEAM_MEMBERS = [
-  { name: 'Ujjwal Katiyar', role: 'Chief Organizer', image: '/ujjwal.jpeg' },
-  { name: 'Ananya Gupta', role: 'Event Coordinator', image: PlaceHolderImages.find(img => img.id === 'team-member-2')?.imageUrl || '' },
-  { name: 'Vikram Singh', role: 'Technical Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-3')?.imageUrl || '' },
+  { name: 'Harshit', role: 'Chief Orgnizer', image: '/harshit.jpeg' },
+  { name: 'Jagriti', role: 'Technical Lead', image:'/jagriti.jpeg' },
+  { name: 'Anshika Singh', role: 'Event Coordinator', image: '/anshika.jpeg' },
+  { name: 'Shekhar', role: 'Chief Executive Officer', image: '/shekhar.png' },
+  { name: 'Ujjwal Katiyar', role: 'Chief Technical Officer', image: '/ujjwal.jpeg' },
+  { name: 'Harsh Vardhan', role: 'Technical Lead', image:'/harsh.jpeg' },
   { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '/' },
   { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },
   { name: 'Sara Khan', role: 'Design Lead', image: PlaceHolderImages.find(img => img.id === 'team-member-1')?.imageUrl || '' },

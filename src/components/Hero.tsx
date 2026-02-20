@@ -5,6 +5,7 @@ import { Calendar, MapPin, Clock } from 'lucide-react';
 import { HERO_DATA } from '@/lib/data';
 import { Button } from './ui/button';
 import Counter from './Timelinecounter';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -54,9 +55,11 @@ export function Hero() {
           <Button
             asChild
             size="lg"
-            className="cta-pulse bg-primary hover:bg-primary/90 text-white font-black tracking-widest uppercase px-12 py-8 text-xl rounded-none transform skew-x-[-12deg]"
+            className=" cta-pulse bg-primary hover:bg-primary/90 text-white font-black tracking-widest uppercase px-12 py-8 text-xl rounded-none transform skew-x-[-12deg]"
           >
-            <a href="#contact" className="transform skew-x-[12deg]">Register Now</a>
+            <Link className='transform skew-x-[12deg]' href={'https://unstop.com/hackathons/mind-installers-hackathon-40-iimt-college-of-engineering-iimt-coe-greater-noida-1645128'}>
+              Register Now
+            </Link>
           </Button>
           <Button
             variant="outline"

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
           MIH <span className="text-primary">4.0</span>
         </div>
         <p className="text-white/40 font-bold uppercase tracking-[0.3em] text-sm">
-          &copy; {new Date().getFullYear()} MIND INSTALLERS HACKATHON. ALL RIGHTS RESERVED.
+          &copy; {new Date().getFullYear()} MIND INSTALLERS HACKATHON. <Link href={'https://github.com/devxrithm'}> Design and Developed by Ujjwal Katiyar</Link>
         </p>
         <div className="mt-8 flex gap-8 text-white/20 text-xs font-black uppercase tracking-widest">
           <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
