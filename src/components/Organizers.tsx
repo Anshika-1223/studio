@@ -9,8 +9,8 @@ const OrganizerCard = ({ name, logo, type }: { name: string; logo: string; type:
       <Image
         src={logo}
         alt={`${name} logo`}
-        width={130}
-        height={130}
+        width={120}
+        height={120}
         className="object-contain transition-transform duration-300 group-hover:scale-110"
       />
     </div>

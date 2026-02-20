@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { NAV_LINKS } from '@/lib/data';
+import Image from 'next/image';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,13 +23,18 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
+        'fixed -top-10 left-0 right-0 z-50 h-40 transition-all duration-300 px-6 py-0',
         isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/" className="font-headline text-2xl font-bold text-white tracking-tighter">
-          MIH <span className="text-primary">4.0</span>
+          <Image
+            src={'/iimt-logo.png'}
+            alt="Logo"
+            width={150}
+            height={150}
+          />
         </Link>
 
         {/* Desktop Links */}
