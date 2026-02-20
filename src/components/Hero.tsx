@@ -8,7 +8,7 @@ import Counter from './Timelinecounter';
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden mt-5">
+    <section className="relative h-[50rem] w-full flex items-center justify-center overflow-hidden">
       {/* Background Video Placeholder with fallback color */}
       <div className="absolute inset-0 z-0 bg-black">
         <video
@@ -28,14 +28,14 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-7xl">
-        <h1 className="text-2xl md:text-7xl lg:text-8xl  font-black mb-5 tracking-tighter text-shimmer leading-tight uppercase font-headline">
+        <h1 className="text-2xl md:text-7xl lg:text-[7rem]  font-black mt-10 tracking-tighter text-shimmer leading-tight uppercase font-headline">
           {HERO_DATA.title}
         </h1>
-        <p className="text-xl md:text-2xl text-white/80 mb-10 font-medium tracking-widest uppercase">
+        <p className="text-xl md:text-2xl text-white/80 mb-10 tracking-widest uppercase font-bold">
           {HERO_DATA.tagline}
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-5">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-12 ">
           <div className="flex items-center gap-3">
             <Calendar className="text-primary w-6 h-6" />
             <span className="text-sm md:text-base font-bold tracking-wider">{HERO_DATA.date}</span>
@@ -49,7 +49,7 @@ export function Hero() {
             <span className="text-sm md:text-base font-bold tracking-wider">{HERO_DATA.time}</span>
           </div>
         </div>
-<Counter/>
+        <Counter />
         <div className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-6">
           <Button
             asChild
@@ -67,9 +67,9 @@ export function Hero() {
           </Button>
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
-      <div className="absolute bottom-0 mt-5 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center ">
+      <div className="absolute bottom-0 mt-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center ">
         <span className="text-sm font-bold tracking-widest uppercase mb-2">Scroll</span>
         <div className="w-6 h-10 border-2 border-primary rounded-full relative">
           <div className="w-1.5 h-1.5 bg-primary rounded-full absolute top-2 left-1/2 -translate-x-1/2 animate-pulse" />
