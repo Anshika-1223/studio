@@ -36,7 +36,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.iimtindia.net',
+        hostname: 'gdgnoida.com',
         port: '',
         pathname: '/**',
       },

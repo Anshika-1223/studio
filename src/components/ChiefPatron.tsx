@@ -13,8 +13,8 @@ const leadership = [
     {
         category: 'Patrons',
         members: [
-            { name: 'Prof.(Dr) Ankur Jauhari', role: 'Director General (Academics)' },
-            { name: 'Prof.(Dr) Chetan Khemraj', role: 'Dy. Director (College Of Engineering)' },
+            { name: 'Prof.(Dr) Harshit Sinha', role: 'Director General (Academics)' },
+            { name: 'Prof.(Dr) Chetan Khemraj', role: 'Director (College Of Engineering)' },
         ],
     },
     {
@@ -26,8 +26,8 @@ const leadership = [
     {
         category: 'Co-ordinator',
         members: [
-            { name: 'Dr. Amit Shukla', role: 'HOD CSE AI' },
-            { name: 'Prof. (Dr) Seema Nayak', role: 'IIMT College of Engineering' },
+            { name: 'Dr. Amit Shukla', role: 'HOD CSE' },
+            { name: 'Dr. Laveena Sehgal', role: 'Associate Professor' },
         ],
     },
 ];
